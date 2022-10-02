@@ -1,0 +1,118 @@
+$font-stack: 'Roboto', sans-serif;
+$font-bold-stack: 'Roboto-Bold', sans-serif;
+$font-italic-bold-stack: "Roboto-Italic-Bold", sans-serif;
+$main-color: #f2e5d7;
+$secondary-color: #262322;
+$secondary-background: #F6F7F8;
+$half-shadow: rgba(0, 0, 0, 0.40) 1.95px 1.95px 2.6px;
+
+%flex{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+}
+
+%mobile-buttons{
+        border: 1px solid $secondary-color;
+        border-radius: 3px;
+        color: $secondary-color;
+
+        transition: ease-out 0.5s;
+        transition-delay: 0.3s;
+
+        &:active,
+        &:visited:active{
+                background-color: $secondary-color;
+                color: $main-color;
+                border-color: $main-color;
+                transform: scale(0.9);
+                transition: ease-out 0.5s;
+                }
+}
+
+
+.buttons-container{
+        @extend %flex;
+        justify-content: space-between;
+        padding: 0;
+        margin: 0;
+
+        a{
+                @extend %flex;
+                @extend %mobile-buttons;
+                height: 25px;
+                width: 65px;
+
+                margin-right: 10px;
+                text-decoration: none;
+        }      
+}
+
+button{
+        @extend %mobile-buttons;
+        width: 215px;
+        padding: 5px 10px;
+        cursor: pointer;
+        background-color: $secondary-background;
+        color: $secondary-color;
+        border: 0;
+        box-shadow: $half-shadow;
+        }
+
+
+@media only screen and (min-width: 768px){
+%desktop-buttons{
+                padding: 10px 20px;
+                margin: 0;
+                transition: ease-out 0.5s;
+                transition-delay: 0.3s;
+                &:link,
+                &:visited{
+                padding: 10px 20px;
+                }
+
+                &:hover,
+                &:visited:hover {
+                background-color: $secondary-color;
+                color: $main-color;
+                border-color: $main-color;
+                transition: ease-out 0.5s;
+        }
+}
+
+.buttons-container {
+        @extend %flex;
+        flex-direction: column;
+
+        a{
+            padding: 10px 20px;
+            margin: 0;
+            transition: ease-out 0.5s;
+            transition-delay: 0.3s;
+            width: 100px;
+
+            &:link,
+            &:visited{
+                padding: 10px 20px;
+            }
+
+            &:hover,
+            &:visited:hover {
+                background-color: $secondary-color;
+                color: $main-color;
+                border-color: $main-color;
+                width: 130px;
+                transition: ease-out 0.5s;
+            }
+        }
+
+
+        
+}
+
+button{
+        @extend %desktop-buttons;
+        width: 461px;
+        border: 0;
+        }
+}

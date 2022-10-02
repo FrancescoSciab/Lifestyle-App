@@ -1,0 +1,407 @@
+@import "buttons-container";
+
+@font-face {
+    font-family: "Roboto";
+    src: url(../font/Roboto-Light-webfont.woff) format(woff);
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Roboto-Bold";
+    src: url(../font/Roboto-Bold-webfont.woff) format(woff);
+}
+
+@font-face {
+    font-family: "Roboto-Italic-Bold";
+    src: url(../font/Roboto-Bold-Italic-webfont.woff) format(woff);
+}
+
+body{
+    margin: 0;
+    padding: 0;
+
+    background-color: $main-color;
+    font-family: $font-stack;
+    font-size: 18px;
+    color: $secondary-color;
+    width: 100%;
+    height: 100%;
+}
+
+strong{
+    font-family: $font-bold-stack;
+    font-weight: 700;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 15%;
+
+    background-color: $main-color;
+    border-bottom: 3px solid $secondary-color;
+    box-shadow: rgba(0, 0, 0, 0.40) 1.95px 1.95px 2.6px;
+
+    h1{
+        margin-left: 15px;
+        font-family: $font-stack;
+        font-size: 20px;
+        font-weight: 500;
+    }
+}
+
+nav{
+    margin-right: 15px;
+}
+
+
+.contact-link a {
+    margin-right: 0;
+}
+
+.about-link,
+.skills-link,
+.contact-link{
+    display: flex;
+    align-items: center;
+}
+
+.contact-link a {
+    margin-right: 0;
+}
+
+.about-link,
+.skills-link,
+.contact-link{
+    display: flex;
+    align-items: center;
+}
+
+.content {
+    position: fixed;
+    overflow: scroll;
+    scroll-behavior: smooth;
+    top: 15%;
+    height: 85%; 
+}
+
+section {
+    border-bottom: 3px solid $secondary-color;
+    padding-left: 30px;
+
+    :last-of-type{
+        border-bottom: 0;
+    }
+}
+
+.first-section {
+    padding-left: 0;
+
+    header{
+        @extend %flex
+    }
+
+    h1{
+        padding: 30px 20px;
+        text-align: center;
+
+        font-family: $font-stack;
+        font-weight: 550;
+        font-size: 40px;
+    }
+}
+
+.profile-picture-section{
+    margin: 0;
+    padding: 0;
+
+    img{
+        display: block;
+        width: 100%;
+    }
+}
+
+#About h1,
+#Skills h1,
+#Contact h1{
+    padding-top: 40px;
+    margin: 0;
+    margin: 0;
+
+    font-size: 30px;
+    
+    transition: 0.5s;
+}
+
+#About p{
+    margin: 0;
+    padding: 20px;
+    line-height: 1.8em;
+
+    font-weight: 300;
+}
+
+#Skills{
+    a{
+        font-family: $font-bold-stack;
+        font-weight: bold;
+        &:visited,
+        &:link:visited{
+            color: $secondary-color;
+        }
+    }
+    
+    ul{
+        margin: 0;
+        padding: 20px;
+    }
+
+    li{
+        padding-bottom: 10px;
+        margin: 0;
+
+        list-style-type: none;
+        font-weight: 300;
+    }
+
+    h2{
+        margin: 0;
+
+        font-size: 20px;
+        font-weight: 200;
+    }
+}
+
+
+#Contact{
+    input[type="text"],
+    input[type="email"],
+    textarea{
+        width: 200px;
+        border: 1px solid $secondary-color;
+        border-radius: 3px;
+        padding: 7px;
+        font-size: 14px;
+        background-color: $secondary-background;
+        margin-bottom: 10px;
+    }
+
+    input[type="text"]:invalid,
+    input[type="email"]:invalid{
+        border: 2px solid red;
+        box-shadow: none;
+    }
+
+    textarea{
+        width: 200px;
+    }
+
+    a{
+        padding-left: 20px;
+        margin-top: 20px;
+
+        font-weight: 300;
+        &:visited
+        &:link:visited{
+            color: $secondary-color;
+        }
+    }
+
+    ul{
+        margin: 0;
+        padding: 0;
+    }
+
+    li{
+        list-style-type: none;
+        padding-bottom: 10px;
+    }
+
+    h1,
+    h2{
+        padding-bottom: 20px;
+    }
+
+    h2{
+        margin: 0;
+        padding-top: 20px;
+    }
+
+    iframe{
+        margin-left: 20px;
+        margin-top: 20px;
+        box-shadow: $half-shadow;
+    }
+
+    a{
+        color: $secondary-color;
+        :visited,
+        :link:visited{
+            color: $secondary-color;
+        }
+    }
+}
+
+form{
+    margin-left: 20px;
+    padding-bottom: 20px;
+}
+
+.name-email-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.name-section,
+.email-section,
+.text-section{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.cv-content{
+    margin: 25px;
+
+    a{
+        color: $secondary-color;
+        font-family: $font-italic-bold-stack;
+        font-style: italic;
+        font-weight: 700;
+        &:visited{
+            color: $secondary-color;
+        }
+    }
+    
+    h1{
+        a{
+            font-style: normal;
+        }
+    }
+
+    p{
+        line-height: 1.8em;
+    }
+
+    h2{
+        margin-top: 40px;
+    }
+    li{
+        margin-bottom: 20px;
+        line-height: 1.8em;;
+    }
+
+    section{
+        border-bottom: 0;
+    }
+}
+
+#reference{
+    margin-top: 100px;
+}
+
+
+
+@media only screen and (min-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        height: 100%;
+        width: 20%;
+        border-bottom: 0;
+        border-right: 3px solid $secondary-color;
+        justify-content: start;
+
+        h1{
+            font-size: 25px;
+            margin-top: 40px;
+            margin-left: 0;
+            margin-bottom: 0;
+        }
+
+        nav{
+            margin-right: 0;
+        }
+    }
+
+    .content {
+        height: 100%;
+        width: 80%;
+        left: 20%;
+        top: 0;
+    }
+
+    .first-section h1{
+        font-size: 90px;
+        font-weight: 550;
+        padding: 60px;
+    }
+
+    #About,
+    #Skills,
+    #Contact{
+        padding-bottom: 40px;
+        padding-right: 40px;
+
+        h1{
+            font-size: 40px;
+            padding-left: 40px;
+            padding-top: 40px;
+            margin: 0;
+        }
+    }
+
+    #About p{
+        padding-top: 40px;
+        padding-left: 40px;
+        margin: 0;
+    }
+
+    #Skills ul{
+        padding-left: 40px;
+    }
+
+    #Contact{
+        input[type="text"]{
+            margin-right: 30px;
+        }
+
+        textarea{
+            width: 445px;
+        }
+
+        h2,
+        a{
+            margin: 0;
+            padding-left: 40px;
+        }
+
+        iframe {
+            margin-left: 40px;
+        }
+    }
+
+    form{
+        margin-left: 40px;
+    }
+    
+
+    .name-email-container{
+        flex-direction: row;
+    }
+
+    .cv-content{
+        margin: 50px;
+    }
+}
+
+
+@media only screen and (min-width: 960px) {
+    .navbar{
+        h1{
+            font-size: 30px;
+        }
+    }
+}
