@@ -271,7 +271,8 @@ form{
         font-family: $font-italic-bold-stack;
         font-style: italic;
         font-weight: 700;
-        &:visited{
+        &:visited
+        &:link:visited{
             color: $secondary-color;
         }
     }
