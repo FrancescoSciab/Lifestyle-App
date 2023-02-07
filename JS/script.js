@@ -27,7 +27,10 @@ $("input").on("input", function(){
             "class": `list city-${input}`,
             html: `<h2> ${input} </h2>` + items.join("")
         }).appendTo("body");
-    });
+        }).fail(function(){
+            $("input").css("background-color", "red");
+            console.error("city not available!");
+        });
     }, 500);
     
 });
