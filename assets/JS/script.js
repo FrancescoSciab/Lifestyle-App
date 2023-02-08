@@ -20,13 +20,13 @@ $("input").on("input", function(){
         $.getJSON(`https://api.teleport.org/api/urban_areas/slug:${input}/scores/`, function(data){//success callback function
         let items = [];// will store items of the loop below
         $.each(data.categories, function(key, val) {
-            items.push("<li>" + val.name + ": " + val.score_out_of_10 + "</li>");
+            items.push("<li><strong>" + val.name + "</strong>" + ": " + val.score_out_of_10 + "</li>");
         });
         //creating ul, adding string of items to the innerHTML of ul and appending to body
         createdUl = $("<ul/>", {
             "class": `list city-${input}`,
             html: `<h2> ${input} </h2>` + items.join("")
-        }).appendTo("body");
+        }).appendTo("#pippo");
         }).fail(function(){
             $("input").css("background-color", "red");
             console.error("city not available!");

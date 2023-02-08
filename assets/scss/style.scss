@@ -1,0 +1,24 @@
+@use 'colors'; 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: colors.$dominant-color;
+}
+#content{
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+#input {
+    border-color: colors.$dominant-color;
+    background-color: colors.$complementar-color;
+}
+
+.list{
+    padding: 0;
+    li{
+        list-style: none;
+    }
+}
+
