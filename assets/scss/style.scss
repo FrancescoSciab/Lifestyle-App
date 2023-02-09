@@ -4,6 +4,10 @@
     padding: 0;
     box-sizing: border-box;
     background-color: colors.$dominant-color;
+    color: colors.$text-color;
+    font-family: colors.$font;
+    font-weight: 300;
+    font-size: 20px;
 }
 #content{
     border-top-right-radius: 20px;

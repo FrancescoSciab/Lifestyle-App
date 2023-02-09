@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     <title>App</title>
 </head>
@@ -14,9 +17,9 @@
     
     <div class="position-absolute h-100 w-100">
         <picture>
-            <source media="(min-width: 1280px)" srcset="assets/img/lifestyle-desktop.jpg"/>
-            <source media="(min-width: 768px)" srcset="assets/img/lifestyle-tablet.jpg"/> 
-            <img src="assets/img/lifestyle-mobile.jpg" alt="" />
+            <source media="(min-width: 1280px)" srcset="assets/img/lifestyle-desktop.jpg" class="w-100 position-absolute"/>
+            <source media="(min-width: 768px)" srcset="assets/img/lifestyle-tablet.jpg" class="w-100 position-absolute"/> 
+            <img src="assets/img/lifestyle-mobile.jpg" alt="" class="w-100 position-absolute"/>
         </picture>
          
         <div class="position-relative top-50 px-5 w-100 h-100" id="content">
@@ -27,15 +30,15 @@
             </div>
             
             <div>
-                <h3 id="how-to-use" class="border-top border-bottom py-3 mt-3 mb-0 position-relative">How to use</h3>
+                <h3 id="how-to-use" class="border-top py-3 mt-3 mb-0 position-relative" role="button">How to use</h3>
 
-                <p id="how-to-use-text" class="position-relative">Please enter the city name you want to search and a list of parameters will come out</p>
+                <p id="how-to-use-text" class="position-relative">Please enter the city name you want to search and a list of categories will be shown above</p>
             </div>
 
-            <div>
-                <h3 id="description" class="left border-bottom py-3 position-relative">Description</h3>
+            <div class="pb-5 mt">
+                <h3 id="description" class="border-bottom border-top py-3 position-relative" role="button">Description</h3>
     
-                <p id="description-text" class="text-left mt-3">City's info will appear below</p>
+                <p id="description-text" class="text-left mt-3">This web app will show cities lifestyles based on some key categories</p>
             </div>
         
         </div>
