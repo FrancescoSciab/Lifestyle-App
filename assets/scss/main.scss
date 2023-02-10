@@ -1,4 +1,7 @@
-@import "buttons-container";
+@import "components/buttons-container";
+@import "styles/colors";
+@import "styles/font";
+
 
 @font-face {
     font-family: "Roboto";
@@ -126,7 +129,8 @@ section {
 
 #About h1,
 #Skills h1,
-#Contact h1{
+#Contact h1,
+#experience h1{
     padding-top: 40px;
     margin: 0;
     margin: 0;
@@ -165,16 +169,54 @@ section {
 
         list-style-type: none;
         font-weight: 300;
+        h2{
+            margin: 0;
+    
+            font-size: 20px;
+            font-weight: 200;
+        }
+        h5{
+            margin: 0;
+        }
+    }
+
+    
+}
+
+#experience{
+    
+    ul{
+        margin: 0;
+        padding: 20px;
+    }
+
+    li{
+        padding-bottom: 10px;
+        margin: 0;
+
+        list-style-type: none;
+        font-weight: 300;
     }
 
     h2{
+        margin-left: 20px;
+    }
+
+    h3{
         margin: 0;
 
         font-size: 20px;
         font-weight: 200;
     }
-}
 
+    a{
+        color: $secondary-color;
+        :visited,
+        :link:visited{
+            color: $secondary-color;
+        }
+    }
+}
 
 #Contact{
     input[type="text"],
@@ -342,7 +384,8 @@ form{
 
     #About,
     #Skills,
-    #Contact{
+    #Contact,
+    #experience{
         padding-bottom: 40px;
         padding-right: 40px;
 
@@ -362,6 +405,16 @@ form{
 
     #Skills ul{
         padding-left: 40px;
+    }
+
+    #experience {
+        ul{
+            padding-left: 40px;
+        }
+
+        h2{
+            padding-left: 20px;
+        }
     }
 
     #Contact{
