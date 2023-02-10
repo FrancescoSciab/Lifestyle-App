@@ -1,14 +1,17 @@
-@use 'colors'; 
+@use 'styles/colors';
+@use 'styles/font';
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     background-color: colors.$dominant-color;
     color: colors.$text-color;
-    font-family: colors.$font;
+    font-family: font.$oswald;
     font-weight: 300;
     font-size: 20px;
 }
+
 #content{
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
@@ -24,8 +27,4 @@
     li{
         list-style: none;
     }
-}
-
-#label{
-    color: red;
 }

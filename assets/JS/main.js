@@ -15,7 +15,7 @@ $("input").on("input", function(){
         let formattedInput = input.toLowerCase().split(" ").join("-");
 
 
-        if(!input.toLowerCase || $(`ul.city-${formattedInput}`).length){//if ul exists, its lenght will be greater than 0
+        if($(`ul.city-${formattedInput}`).length){//if ul exists, its lenght will be greater than 0
             return;
         }
 
@@ -29,20 +29,20 @@ $("input").on("input", function(){
         //3: API call
         $.getJSON(`https://api.teleport.org/api/urban_areas/slug:${formattedInput}/scores/`, function(data){//success callback function
 
-        //action 1: will store items of the loop below
+          //action 1: will store items of the loop below
         let items = []; 
         
-        //action 2: loop and push
+          //action 2: loop and push
         $.each(data.categories, function(key, val) {
             items.push("<li><strong>" + val.name + "</strong>" + ": " + val.score_out_of_10 + "</li>");
         });
 
 
-        //action 3: creating ul, adding string of items to the innerHTML of ul and appending to selected div
+          //action 3: creating ul, adding string of items to the innerHTML of ul and appending to selected div (*)
         createdUl = $("<ul/>", {
             "class": `list city-${formattedInput}`,
             html: `<h2> ${input} </h2>` + items.join("")
-        }).appendTo("#categories");
+        }).appendTo("#categories");//selected div (*)
 
         //error handler function
         }).fail(function(){
