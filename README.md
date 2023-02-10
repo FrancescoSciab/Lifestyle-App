@@ -23,6 +23,6 @@ Developed with:
 
 # Contacts
 Francesco Sciabbarrasi
-[Email:](mailto:francesco.sciabbarrasii@gmail.com)
-[Personal Website](https://francescosciab.github.io/EN-PersonalWebsite/)
-[Project link](https://github.com/FrancescoSciab/App)
+- [Send me an email](mailto:francesco.sciabbarrasii@gmail.com)
+- [Personal Website](https://francescosciab.github.io/EN-PersonalWebsite/)
+- [Project link](https://github.com/FrancescoSciab/App)
