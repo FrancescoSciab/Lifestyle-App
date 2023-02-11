@@ -13,6 +13,11 @@ Developed with:
 - HTML 
 - SCSS
 
+# Other projects
+- [Lifestyle App](https://francescosciab.github.io/Lifestyle-App/)
+- [Calculator](https://francescosciab.github.io/Calculator/)
+- [Counter](https://francescosciab.github.io/Counter-S2i/)
+
 # Contacts
 - [Send me an email](mailto:francesco.sciabbarrasii@gmail.com)
 - [Current Personal Website](https://francescosciab.github.io/EN-PersonalWebsite/)
