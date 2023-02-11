@@ -1,4 +1,4 @@
-@import "components/buttons-container";
+@import "components/buttons";
 @import "styles/colors";
 @import "styles/font";
 
@@ -149,6 +149,7 @@ section {
 }
 
 #Skills{
+    border-bottom: 0;
     a{
         font-family: $font-bold-stack;
         font-weight: bold;
@@ -184,7 +185,14 @@ section {
 }
 
 #experience{
+    h1{
+        padding-top: 0;
+    }
     
+    h2{
+        margin-left: 20px;
+    }
+
     ul{
         margin: 0;
         padding: 20px;
@@ -196,10 +204,6 @@ section {
 
         list-style-type: none;
         font-weight: 300;
-    }
-
-    h2{
-        margin-left: 20px;
     }
 
     h3{
@@ -408,12 +412,16 @@ form{
     }
 
     #experience {
-        ul{
-            padding-left: 40px;
+        h1{
+            padding-top: 0;
         }
 
         h2{
             padding-left: 20px;
+        }
+
+        ul{
+            padding-left: 40px;
         }
     }
 
