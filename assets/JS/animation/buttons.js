@@ -1,3 +1,4 @@
+
 //animating instructions 
 $(document).ready(function(){
     $("#how-to-use-text, #description-text").hide();//text has to be hidden
@@ -7,3 +8,5 @@ $(document).ready(function(){
         });
     });
 });
+
+export let test = "ciao";
