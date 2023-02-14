@@ -1,5 +1,4 @@
-import {test} from "./animation/buttons";
-
+import { test } from "./animation/buttons";
 //It's a global variable to keep track of the setTimeout call that is created when the input event fires
 let inputTimeout;
 let createdUl;
@@ -30,7 +29,7 @@ $("input").on("input", function(){
 
         //3: API call
         $.getJSON(`https://api.teleport.org/api/urban_areas/slug:${formattedInput}/scores/`, function(data){//success callback function
-
+        
           //action 1: will store items of the loop below
         let items = []; 
         
@@ -43,7 +42,7 @@ $("input").on("input", function(){
           //action 3: creating ul, adding string of items to the innerHTML of ul and appending to selected div (*)
         createdUl = $("<ul/>", {
             "class": `list city-${formattedInput}`,
-            html: `<h2> ${input} </h2>` + items.join("")
+            html: `<h2> ${input} </h2>` + `<li> ${data.summary} </li>` + items.join("")
         }).appendTo("#categories");//selected div (*)
 
         //error handler function
