@@ -1,6 +1,6 @@
 
-//animating instructions 
-$(document).ready(function(){
+//animating instructions buttons
+export let buttonsAnimation = $(document).ready(function(){
     $("#how-to-use-text, #description-text").hide();//text has to be hidden
     $("#how-to-use, #description").click(function(){
         $(this).next().animate({//setting animation
@@ -9,4 +9,4 @@ $(document).ready(function(){
     });
 });
 
-export let test = "ciao";
+
