@@ -14,8 +14,15 @@ Built with:
 - SASS
 - Jquery
 
+# Other projects
+- [Counter](https://francescosciab.github.io/Counter-S2i/)
+- [Calculator](https://francescosciab.github.io/Calculator/)
+- [Personal website](https://francescosciab.github.io/EN-PersonalWebsite/)
+
 # Contacts
 Francesco Sciabbarrasi
 - [Send me an email](mailto:francesco.sciabbarrasii@gmail.com)
 - [Personal Website](https://francescosciab.github.io/EN-PersonalWebsite/)
+- [Linkedin profile](https://www.linkedin.com/in/francesco-sciabbarrasi-94231a212/?locale=en_US)
+- [GitHub profile](https://github.com/FrancescoSciab)
 - [Project link](https://francescosciab.github.io/Lifestyle-App/)
