@@ -63,7 +63,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _com
 /******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
 /******/ 	
 /******/ 		// Return the exports of the module
-/******/ 		return module.exports; 
+/******/ 		return module.exports;
 /******/ 	}
 /******/ 	
 /************************************************************************/
