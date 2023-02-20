@@ -1,3 +1,4 @@
+import _ from 'lodash';
 //It's a global variable to keep track of the setTimeout call that is created when the input event fires
 let inputTimeout;
 let categoriesUl;
@@ -30,19 +31,19 @@ export const searchBar = $(document).ready( function(){
             
            
             $.getJSON(`https://api.teleport.org/api/urban_areas/slug:${formattedCityInput}/scores/`, function(data){
-    
-                const aqi = _.get(result.data, aqi, 0);
 
                 //will store items of the loop below
                 let items = [];
-    
-                $.each(data.categories, function(key, val) {
+
+                const categories = _.get(data, 'categories', 0);
+                $.each(categories, function(key, val) {
                     items.push("<li><strong>" + val.name + "</strong>" + ": " + val.score_out_of_10 + "</li>");
                 });
-    
+                
+                const summaries = _.get(data, "summary", '');
                 categoriesUl = $("<ul/>", {
                     "class": `list city-${formattedCityInput}`,
-                    html: `<h2> ${cityInput} </h2>` + `<li> ${data.summary} </li>` + items.join("")
+                    html: `<h2> ${cityInput} </h2>` + `<li> ${summaries} </li>` + items.join("")
                 }).appendTo("#categories");//selected div (*)
             
             }).fail(function(){

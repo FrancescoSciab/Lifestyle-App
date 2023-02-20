@@ -1,5 +1,5 @@
 const path = require('path');
-var LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 var webpack = require('webpack');
 
 module.exports = {
@@ -16,9 +16,6 @@ module.exports = {
                 exclude: /(node_modules)/,
                 use: {
                   loader: 'babel-loader',
-                  options: {
-                    presets: ['@babel/preset-env']
-                  }
                 }
               }
         ]
@@ -28,21 +25,13 @@ module.exports = {
           'use': 'babel-loader',
           'test': /\.js$/,
           'exclude': /node_modules/,
-          'options': {
-            'plugins': ['lodash'],
-            'presets': [['env', { 'modules': false, 'targets': { 'node': 4 } }]]
-          }
         }]
       },
-      'plugins': [
-        new LodashModuleReplacementPlugin,
-        new webpack.optimize.UglifyJsPlugin
-      ],
+      optimization: {
+        minimize: true,
+        minimizer: [new TerserPlugin()],
+      },
     mode: 'development'
 };
-new LodashModuleReplacementPlugin({
-    'collections': true,
-    'paths': true
-  });
 
   

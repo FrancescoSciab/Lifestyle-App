@@ -1,3 +1,3 @@
-import { searchBar } from "./components/search-bar";
+import _ from "./components/search-bar";
 import { buttonsAnimation } from "./animation/buttons";
 
