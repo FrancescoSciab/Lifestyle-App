@@ -31,8 +31,10 @@ export const searchBar = $(document).ready( function(){
            
             $.getJSON(`https://api.teleport.org/api/urban_areas/slug:${formattedCityInput}/scores/`, function(data){
     
+                const aqi = _.get(result.data, aqi, 0);
+
                 //will store items of the loop below
-                const items = []; 
+                let items = [];
     
                 $.each(data.categories, function(key, val) {
                     items.push("<li><strong>" + val.name + "</strong>" + ": " + val.score_out_of_10 + "</li>");
