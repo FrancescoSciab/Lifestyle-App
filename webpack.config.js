@@ -40,5 +40,9 @@ module.exports = {
       ],
     mode: 'development'
 };
+new LodashModuleReplacementPlugin({
+    'collections': true,
+    'paths': true
+  });
 
   
