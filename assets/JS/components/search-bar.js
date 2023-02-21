@@ -30,35 +30,39 @@ export const searchBar = $(document).ready( function(){
             }
             
            
-            $.getJSON(`https://api.teleport.org/api/urban_areas/slug:${formattedCityInput}/scores/`, function(data){
+            try{
+                $.getJSON(`https://api.teleport.org/api/urban_areas/slug:${formattedCityInput}/scores/`, function(data){
 
-                //will store items of the loop below
-                let items = [];
+                    //will store items of the loop below
+                    let items = [];
+                    const categories = _.get(data, 'categories', 0);
+                    $.each(categories, function(key, val) {
+                        items.push("<li><strong>" + val.name + "</strong>" + ": " + val.score_out_of_10 + "</li>");
+                    });
+                
+                    const summaries = _.get(data, "summary", '');
+                    categoriesUl = $("<ul/>", {
+                        "class": `list city-${formattedCityInput}`,
+                        html: `<h2> ${cityInput} </h2>` + `<li> ${summaries} </li>` + items.join("")
+                    }).appendTo("#categories");//selected div (*)
+                }).fail (function(){
+                    const error = $("<p/>", {
+                        "class": "text-danger",//boostrap info
+                        "html": "City not available"
+                    }).appendTo('#label');
+        
+                    setTimeout(function(){
+                        error.remove()
+                    }, 2000);
+                    
+                    console.error("city not available or city name misspelled");
+                })
+            }
 
-                const categories = _.get(data, 'categories', 0);
-                $.each(categories, function(key, val) {
-                    items.push("<li><strong>" + val.name + "</strong>" + ": " + val.score_out_of_10 + "</li>");
-                });
-                
-                const summaries = _.get(data, "summary", '');
-                categoriesUl = $("<ul/>", {
-                    "class": `list city-${formattedCityInput}`,
-                    html: `<h2> ${cityInput} </h2>` + `<li> ${summaries} </li>` + items.join("")
-                }).appendTo("#categories");//selected div (*)
-            
-            }).fail(function(){
-                
-                const error = $("<p/>", {
-                    "class": "text-danger",//boostrap info
-                    "html": "City not available"
-                }).appendTo('#label');
-    
-                setTimeout(function(){
-                    error.remove()
-                }, 2000);
-                
-                console.error("city not available or city name misspelled");
-            });
+            catch (error){
+                const errorMessage = 'Something went wrong: ' + error.message;
+                console.error(errorMessage);
+            }
         }, 500);
     })
 });

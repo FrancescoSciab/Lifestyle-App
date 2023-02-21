@@ -31,6 +31,13 @@ module.exports = {
         minimize: true,
         minimizer: [new TerserPlugin()],
       },
+
+      plugins: [
+        new webpack.ProvidePlugin({
+            $: require.resolve('jquery'),
+            jQuery: require.resolve('jquery')
+        }),
+    ],
     mode: 'development'
 };
 
