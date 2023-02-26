@@ -13,6 +13,7 @@ Built with:
 - HTML
 - SASS
 - Jquery
+- Webpack tool
 
 # Other projects
 - [Counter](https://francescosciab.github.io/Counter-S2i/)
