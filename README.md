@@ -8,6 +8,7 @@ Simply enter the name of a city you want to search, and half a second later you'
 # Contributing
 This web app has been entirely created by [myself](https://github.com/FrancescoSciab) as the fourth project for my Start2Impact course.
 
+
 # Technical description
 Built with:
 - HTML
